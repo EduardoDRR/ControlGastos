@@ -1,12 +1,13 @@
-import './App.css'
-import { MyRoutes} from "./index"
+
+import { MyRoutes } from "./index"
 
 function App() {
   return (
     <>
-      <MyRoutes/>
+      <MyRoutes />
     </>
   )
 }
 
 export default App
+

@@ -1,4 +1,5 @@
 export { default as App } from './App';
+export * from './components/moleculas/Btnsave';
 export * from './main';
 export * from './pages/Home';
 export * from './pages/Login';
