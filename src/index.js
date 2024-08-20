@@ -4,5 +4,7 @@ export * from './main';
 export * from './pages/Home';
 export * from './pages/Login';
 export * from './routes/routes';
+export * from './styles/themes';
+export * from './styles/variables';
 export * from './template/HomeTemplate';
 export * from './template/LoginTemplate';

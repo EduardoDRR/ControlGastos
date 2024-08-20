@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export function Btnsave() {
-	return (<Container>
-		<h1>boton</h1>
+export function Btnsave(funcion, titulo, bgcolor, icono) {
+	return (<Container type="submit">
+		<span className="icono">{icono}</span>
+		<apan className="btn" onClick={funcion}>
+			{ /* titrulo */}
+		</apan>
 	</Container>);
 }
 const Container = styled.button`
@@ -10,4 +13,8 @@ const Container = styled.button`
  justify-content: center;
  align-items: center;
  text-decoration: none;
+ border: none;
+ .icono{
+	
+ }
 `

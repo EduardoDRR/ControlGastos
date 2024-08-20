@@ -8,7 +8,7 @@ export function LoginTemplate() {
 			<div>
 				<img />
 			</div>
-			<Titulo>Control de Gstos</Titulo>
+			<Titulo>Control de Gastos</Titulo>
 			<p>Toma el control de tus gastos💵 e ingresos💰</p>
 
 			<ContainerBtn>
@@ -21,7 +21,7 @@ const Container = styled.div`
  
 `
 const Titulo = styled.span`
- font-size: 4rem;
+ font-size: 5rem;
  font-weight: 700;
 `
 const ContainerBtn = styled.div`
