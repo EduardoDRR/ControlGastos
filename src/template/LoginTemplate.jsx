@@ -6,7 +6,7 @@ export function LoginTemplate() {
 		<div className="contentCard">
 			<span className="version">Version 1.0</span>
 			<div className="contentImg">
-				<img src={ v.logo} />
+				<img src={ v.logo2} />
 			</div>
 			<Titulo>Control de Gastos</Titulo>
 			<p className="frase">Toma el control de tus gastos💵 e ingresos💰</p>

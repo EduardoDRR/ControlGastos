@@ -13,6 +13,7 @@ import { FaReact } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
 import logo from "../assets/logocerdo.png";
+import logo2 from "../assets/logoControlGastos.png"
 import { BsGoogle } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
@@ -67,6 +68,7 @@ export const v = {
 	flechaarribalarga: BsArrowUpShort,
 	balance: FaBalanceScale,
 	logo: logo,
+	logo2 : logo2,
 	iconogoogle: BsGoogle,
 	iconocerrar: RiCloseLine,
 	iconoguardar: BiSave,

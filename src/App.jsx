@@ -3,6 +3,9 @@ import { createContext, useState } from "react"
 import { Light, Dark } from "./index"
 import { ThemeProvider } from "styled-components"
 
+//Contraseña de DB:
+// EvodNxwtBtsPoQm6
+
 export const ThemeContext = createContext(null);
 
 function App() {
