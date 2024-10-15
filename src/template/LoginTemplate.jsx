@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Btnsave,v } from "../index"
+import { Btnsave, v, useAuthStore } from "../index"
 
 export function LoginTemplate() {
+	const {singInWithGoogle} = useAuthStore();
 	return (<Container imgfondo={v.imagenfondo} >
 		<div className="contentCard">
 			<span className="version">Version 1.0</span>
@@ -12,7 +13,7 @@ export function LoginTemplate() {
 			<p className="frase">Toma el control de tus gastos💵 e ingresos💰</p>
 
 			<ContainerBtn>
-				<Btnsave titulo="iniciar con google" icono={<v.iconogoogle/>} bgcolor={ v.colorSecundario}/>
+				<Btnsave titulo="iniciar con google" icono={<v.iconogoogle/>} bgcolor={ v.colorSecundario} funcion={singInWithGoogle}/>
 			</ContainerBtn>
 		</div>
 	</Container>);

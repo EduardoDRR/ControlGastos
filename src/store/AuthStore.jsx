@@ -1,15 +1,28 @@
 import { create } from 'zustand'
-import { supabsae } from "../index"
+import { supabase } from "../index"
+import { useState } from "react"
 
-export const useAuthStore = create((set, get) => ({
+export const useAuthStore = create((set) => ({
 	isAuth: false,
-	singWithGoogle: async () => {
+	dataUserGoogle: [],
+	singInWithGoogle: async () => {
 		try {
-			const { data, error } = await supabsae.auth.signInWithOAuth
-				({ provider: "google" })
-		} catch (error) {
+			const { data, error } = await supabase.auth.signInWithOAuth({
+				provider: "google",
+			});
 
-		}
-	}
+			if (error)
+				throw new Error("A ocurrido un error durante la autentificacion")
+			set({ isAuth: true })
+			return data
+		} catch (error) {}
+	},
+
+	singOut: async () => {
+		const { error } = await supabase.auth.singOut();
+		set({ isAuth: false });
+		if (error)
+			throw new Error("A ocurrido un error durante el cierre de sesion");
+	},
 }))
 

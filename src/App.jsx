@@ -1,6 +1,6 @@
 import { MyRoutes } from "./index"
 import { createContext, useState } from "react"
-import { Light, Dark } from "./index"
+import { Light, Dark, AuthContextProvider } from "./index"
 import { ThemeProvider } from "styled-components"
 
 //Contraseña de DB:
@@ -18,7 +18,10 @@ function App() {
     <>
       <ThemeContext.Provider value={{setTheme, theme}}>
         <ThemeProvider theme={themeStyle}>
-          <MyRoutes />
+          <AuthContextProvider>
+            <MyRoutes />
+            <ReactQueryDevtools initialIsOpen={true} />
+          </AuthContextProvider>
         </ThemeProvider>
       </ThemeContext.Provider>
 

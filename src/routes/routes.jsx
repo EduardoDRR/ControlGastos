@@ -1,12 +1,18 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import { Login, Home } from "../index"
+import { Login, Home, ProtectedRoute, userAuth } from "../index"
 
 export function MyRoutes() {
+	const { user } = userAuth();
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/asdfasf" element={<Home />} />
-				<Route path="/" element={<Login />} />
+				<Route path="/login" element={<Login />} />
+				<Route
+					element={<ProtectedRoute user={user} redirectTo="/login" />} >
+					
+				</Route>
+				<Route path="/" element={<Home />} />
+
 			</Routes>
 		</BrowserRouter>
 	)
