@@ -1,33 +1,26 @@
-import { MyRoutes } from "./index"
+import "./App.css";
+import { MyRoutes } from "./index";
 import { createContext, useState } from "react"
-import { Light, Dark, AuthContextProvider } from "./index"
-import { ThemeProvider } from "styled-components"
-
-//Contraseña de DB:
-// EvodNxwtBtsPoQm6
+import { Dark, Light } from "./index";
+import { ThemeProvider } from "styled-components"; "styled-components";
 
 export const ThemeContext = createContext(null);
 
 function App() {
-  //Este es un comentario jajajaj xD
-  
-  const [theme, setTheme] = useState("ligth");
-  const themeStyle = theme === "ligth" ? Light : Dark;
+  const [theme, setTheme] = useState("light");
+  const themeStyle = theme === "light" ? Light : Dark;
+
 
   return (
     <>
-      <ThemeContext.Provider value={{setTheme, theme}}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
         <ThemeProvider theme={themeStyle}>
-          <AuthContextProvider>
-            <MyRoutes />
-            <ReactQueryDevtools initialIsOpen={true} />
-          </AuthContextProvider>
+          <MyRoutes />
         </ThemeProvider>
       </ThemeContext.Provider>
-
     </>
   )
 }
 
-export default App
+export default App;
 

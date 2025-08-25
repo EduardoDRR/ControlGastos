@@ -3,7 +3,7 @@ import { LoginTemplate } from "../index"
 
 export function Login() {
 	return (<>
-		<LoginTemplate />
+		<LoginTemplate/>
 	</>);
 }
 const Container = styled.div`

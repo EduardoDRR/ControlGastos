@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export function Home() {
+export function HomeTemplate() {
 	return (<Container>
-		<h1>HOME</h1>
+		<h1>HomeTempate</h1>
 	</Container>);
 }
 const Container = styled.div`
- height: 100vh;
+  padding: 16px;
+  background-color: #f5f5f5;
 `
