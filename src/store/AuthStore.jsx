@@ -1,28 +1,24 @@
-import { create } from 'zustand'
-import { supabase } from "../index"
-import { useState } from "react"
+import { create } from "zustand"
+import { supabase } from "../indexx"
 
-export const useAuthStore = create((set) => ({
+export const useAuthStore = create((set,get) => ({
 	isAuth: false,
-	dataUserGoogle: [],
-	singInWithGoogle: async () => {
+	signWithGoogle: async () => {
 		try {
 			const { data, error } = await supabase.auth.signInWithOAuth({
-				provider: "google",
-			});
-
-			if (error)
-				throw new Error("A ocurrido un error durante la autentificacion")
+				provider: 'google',
+			})
+			if (error) throw new Error("A ocurrido un error durante la autenticacion")
 			set({ isAuth: true })
-			return data
-		} catch (error) {}
+		return data
+		} catch (error) {
+			
+		}
 	},
+	signOut: async () => {
+			const { error } = await supabase.auth.signOut()
+			if (error) throw new Error("A ocurrido un error durante el cierre de sesion")
+			set({ isAuth: false })
+	}
 
-	singOut: async () => {
-		const { error } = await supabase.auth.singOut();
-		set({ isAuth: false });
-		if (error)
-			throw new Error("A ocurrido un error durante el cierre de sesion");
-	},
 }))
-
